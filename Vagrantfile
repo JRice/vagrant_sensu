@@ -28,6 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :inline => $install_chef
 
   config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "ntp"
     chef.add_recipe "vim"
     chef.json = {
       :users => ['jrice']
