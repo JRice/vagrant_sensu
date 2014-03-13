@@ -1,0 +1,14 @@
+{
+  "groups": [
+    "sysadmin"
+  ],
+  "comment": "Just testing",
+  "password": "$1$e7dIgeDj$qIsM3sOK/jLYncM9lwq8V1",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIYxaZmVbdIOTjo3NFi+s2x916OqnxpyPFuyYvzWt+NQjLk0u2g52Ja9W2dgUU56Q7hvc+rJaVuyx3aQ5gpkY4jSiWRdmsHyFqpnvZsiBBA5S4ECU4G/XsVLt60eI4KbGgyiFxCvuTnAUi38N6q2HCCXAvWieQx4Of9kqpKWvRj+D2FGYw7vV7ON9QY+kHK3cT24tmIm69tR9DUN/JJkAD99GpEUJxUNGx5+QiSvIiW3AtdEZ2dvJfr30LTmECHe4mC1mJXt1kuTJmFvGqpt2jhUr01wIOev787UfEBVJVzTcazZZY3WyvgFijS2VSIlUeXI9fQo5Wn6oDZhAScLxD jrice@Jeremys-MacBook-Pro.local"
+  ],
+  "id": "jrice",
+  "shell": "/bin/bash",
+  "email": "jrice@eol.org"
+}
+
