@@ -28,6 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :inline => $install_chef
 
   config.vm.provision "chef_solo" do |chef|
+    chef.data_bags_path = "data_bags"
     chef.add_recipe "ntp"
     chef.add_recipe "vim"
     chef.add_recipe "monitor"
