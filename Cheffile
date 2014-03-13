@@ -4,4 +4,4 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'ntp'
 cookbook 'vim'
-cookbook 'sensu-chef', git: "https://github.com/sensu/sensu-chef"
+cookbook 'monitor', git: "https://github.com/portertech/chef-monitor"
