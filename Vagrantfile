@@ -1,6 +1,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+$install_chef = <<SCRIPT
+if ! [ -d "/opt/chef" ];
+then
+  apt-get update
+  apt-get install -y curl
+  curl -L https://www.opscode.com/chef/install.sh | bash
+fi
+SCRIPT
+
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
@@ -16,12 +25,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  config.vm.provision :shell, :inline => 'apt-get update'
-  config.vm.provision :shell, :inline => 'apt-get install build-essential 1.9.1-dev --no-upgrade --yes'
-  config.vm.provision :shell, :inline => "gem install chef --version 11.10.4 --no-rdoc --no-ri --conservative"
+  config.vm.provision :shell, :inline => $install_chef
+
   config.vm.provision "chef_solo" do |chef|
-    chef.cookbooks_path = ["cookbooks"]
-    chef.data_bags_path = "data_bags"
     chef.add_recipe "vim"
     chef.json = {
       :users => ['jrice']
