@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :inline => "gem install chef --version 11.10.4 --no-rdoc --no-ri --conservative"
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = ["cookbooks"]
-    chef.data_bags_path = "databags"
+    chef.data_bags_path = "data_bags"
     chef.add_recipe "vim"
     chef.json = {
       :users => ['jrice']
