@@ -1,0 +1,12 @@
+{
+  "id": "ssl",
+  "server": {
+    "key": 'this is bogus',
+    "cert": 'this is worse',
+    "cacert: 'this is awful'
+  },
+  "client": {
+    "key": "bad",
+    "cert": "worse"
+  }
+}
