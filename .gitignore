@@ -1,3 +1,4 @@
 /cookbooks/
 /cookbooks
 /tmp
+.vagrant/machines
