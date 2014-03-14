@@ -21,6 +21,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
 
+  config.vm.network "forwarded_port", guest: 8080, host: 8181
+
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
@@ -31,10 +33,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.data_bags_path = "data_bags"
     chef.add_recipe "ntp"
     chef.add_recipe "vim"
-    chef.add_recipe "monitor"
+    # Note that this includes sensu::dashboard:
+    chef.add_recipe "monitor::master"
+    chef.add_recipe "monitor::redis"
+    chef.add_recipe "monitor::rabbitmq"
     chef.json = {
       :users => ['jrice']
     }
-    chef.log_level = :debug # TODO - comment this out when you're done tweaking.
+    # chef.log_level = :debug
   end
 end
